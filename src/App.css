@@ -1,0 +1,23 @@
+:root {
+  /* Mode clair */
+  --background-color: #F5F5F5;
+  --text-color: #212121;
+  --accent-green: #4CAF50;
+  --accent-yellow: #FFEB3B;
+  --border-color: #E0E0E0;
+  --button-primary: #388E3C;
+  --button-secondary: #FBC02D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Mode sombre */
+    --background-color: #121212;
+    --text-color: #E0E0E0;
+    --accent-green: #81C784;
+    --accent-yellow: #FFF176;
+    --border-color: #333333;
+    --button-primary: #66BB6A;
+    --button-secondary: #FDD835;
+  }
+}

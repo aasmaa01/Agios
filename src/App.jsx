@@ -1,14 +1,18 @@
 import './App.css'
-import MouvemetsTable from './components/MouvemetsTable.jsx'
+import Header from './components/Layout/Header.jsx'
+import Footer from './components/Layout/Footer.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import Layout from './components/Layout/Layout.js'
 
 function App() {
 
   return (
-    <>
-    <h1>hello</h1>
-   <MouvemetsTable/>
-   
-    </>
+    <BrowserRouter>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="dashboard" element={<Dashboard/>}/>
+      </Route>
+    </BrowserRouter>
   )
 }
 

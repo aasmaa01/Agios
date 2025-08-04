@@ -1,12 +1,35 @@
-# React + Vite
+# 📊 Échelle des Intérêts (Agios Calculator)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web application to calculate **interests, TVA, fees, and agios** for bank accounts.  
+Users can input account information, manage financial movements, and view automatic calculations in a structured dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features (Planned)
+- 🔹 **Dark/Light Mode** support
+- 🔹 Account management (Numéro de compte, Raison Sociale)
+- 🔹 **Movements Table** with real-time calculations
+- 🔹 **Excel (.xlsx) Import** for financial data
+- 🔹 **Summary Table**: Interests, TVA, Fees, Agios
+- 🔹 Validation of dates and interest rates
+- 🔹 **Backend-ready architecture** (Express.js planned)
 
-## Expanding the ESLint configuration
+---
+## 🛠️ Tech Stack
+- **React + Vite**
+- **Tailwind CSS** (for styling + dark/light mode)
+- **React Router** (page navigation)
+- **React Hook Form + Yup** (form handling & validation)
+- **SheetJS (xlsx)** (Excel import support)
+- **Express.js Backend** (planned, not yet implemented)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📌 Roadmap
+- [x] Setup project skeleton and file structure
+- [ ] Implement ThemeContext (dark/light mode)
+- [ ] Add Account Form (Numéro de compte, Raison Sociale)
+- [ ] Build Movements Table with calculations
+- [ ] Add Summary Table (total interests, TVA, agios)
+- [ ] Enable Excel import
+- [ ] Connect backend with Express.js + database

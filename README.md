@@ -10,6 +10,7 @@ Users can input account information, manage financial movements, and view automa
 - 🔹 Account management (Numéro de compte, Raison Sociale)
 - 🔹 **Movements Table** with real-time calculations
 - 🔹 **Excel (.xlsx) Import** for financial data
+- 🔹 **Excel (.xlsx) Export**
 - 🔹 **Summary Table**: Interests, TVA, Fees, Agios
 - 🔹 Validation of dates and interest rates
 - 🔹 **Backend-ready architecture** (Express.js planned)
@@ -19,7 +20,7 @@ Users can input account information, manage financial movements, and view automa
 - **React + Vite**
 - **Tailwind CSS** (for styling + dark/light mode)
 - **React Router** (page navigation)
-- **React Hook Form + Yup** (form handling & validation)
+- **React Hook Form** (form handling & validation)
 - **SheetJS (xlsx)** (Excel import support)
 - **Express.js Backend** (planned, not yet implemented)
 
@@ -27,9 +28,9 @@ Users can input account information, manage financial movements, and view automa
 
 ## 📌 Roadmap
 - [x] Setup project skeleton and file structure
-- [ ] Implement ThemeContext (dark/light mode)
-- [ ] Add Account Form (Numéro de compte, Raison Sociale)
-- [ ] Build Movements Table with calculations
-- [ ] Add Summary Table (total interests, TVA, agios)
-- [ ] Enable Excel import
+- [x] Implement ThemeContext (dark/light mode)
+- [x] Add Account Form (Numéro de compte, Raison Sociale)
+- [x] Build Movements Table with calculations
+- [x] Add Summary Table (total interests, TVA, agios)
+- [x] Enable Excel import
 - [ ] Connect backend with Express.js + database

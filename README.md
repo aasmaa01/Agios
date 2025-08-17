@@ -30,6 +30,16 @@ Users can input account information, manage financial movements, and view automa
 
 ---
 
+## Screenshots
+
+| ![Screenshot 1](https://github.com/user-attachments/assets/1646f04e-8dc6-41fe-af3e-ee08ac00e467) | ![Screenshot 2](https://github.com/user-attachments/assets/d0715c40-0240-43df-b246-a725d48a2a90) |
+|---|---|
+| ![Screenshot 3](https://github.com/user-attachments/assets/439e2175-6589-4587-8120-09aaa39ee026) | ![Screenshot 4](https://github.com/user-attachments/assets/186a04c7-65aa-44f7-ae05-af94d8b44bca) |
+
+
+
+
+
 ## Tech Stack
 - **React + Vite**
 - **Tailwind CSS** (for styling + dark/light mode)

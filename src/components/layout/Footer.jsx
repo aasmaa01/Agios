@@ -1,8 +1,7 @@
-import React from 'react';
 
 function Footer() {
   return (
-    <footer className="p-6 mt-10 text-[#2C2C2C] bg-[#B9D4AA] shadow-inner dark:bg-[#2C2C2C] dark:text-[#B9D4AA]">
+    <footer className=" p-6 mt-10 text-[#2C2C2C] bg-[#B9D4AA] shadow-inner dark:bg-[#2C2C2C] dark:text-[#B9D4AA]">
       <p className="mb-4 text-sm text-center">© 2025 Your Company Name. All rights reserved.</p>
       <p className="mb-2 text-center">Follow us on:</p>
 

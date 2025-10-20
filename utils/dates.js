@@ -7,10 +7,10 @@ export const calculateDaysDifference = (date1, date2) => {
 
 export const getQuarterDates = (quarter, year = 2025) => {
   const quarters = {
-    'Q1': { start: new Date(year, 0, 1), end: new Date(year, 2, 31), label: '01/01 au 31/03' },
-    'Q2': { start: new Date(year, 3, 1), end: new Date(year, 5, 30), label: '01/04 au 30/06' },
-    'Q3': { start: new Date(year, 6, 1), end: new Date(year, 8, 30), label: '01/07 au 30/09' },
-    'Q4': { start: new Date(year, 9, 1), end: new Date(year, 11, 31), label: '01/10 au 31/12' }
+    'Q1': { start: new Date(year, 0, 1), end: new Date(year, 2, 31), label: '01/01 🡆 31/03' },
+    'Q2': { start: new Date(year, 3, 1), end: new Date(year, 5, 30), label: '01/04 🡆 30/06' },
+    'Q3': { start: new Date(year, 6, 1), end: new Date(year, 8, 30), label: '01/07 🡆 30/09' },
+    'Q4': { start: new Date(year, 9, 1), end: new Date(year, 11, 31), label: '01/10 🡆 31/12' }
   };
   return quarters[quarter];
 };

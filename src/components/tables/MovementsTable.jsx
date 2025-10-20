@@ -5,6 +5,8 @@ import { formatCurrency, formatDate } from '../../../utils/format';
 import { getQuarterDates, isDateInQuarter } from '../../../utils/dates';
 import calculateInterest from '../../../utils/calc';
 import Button from '../ui/Button'; // Importing the Button component
+import { calculateDaysDifference } from '../../../utils/dates';
+import * as XLSX from 'xlsx';
  
 
 const MovementsTable = ({ movements, setMovements, taux, selectedQuarter, alert, setAlert, soldeDepart, setSoldeDepart }) => {

@@ -10,6 +10,10 @@ const AccountForm = ({ onAccountSubmit }) => {
   const [raisonSociale, setRaisonSociale] = useState('');
   const [showRaisonSociale, setShowRaisonSociale] = useState(false);
   const [accounts] = useState({}); // Simulated accounts storage
+  const [numeroError]= useState('Something’s wrong here.');
+
+  
+  
   
   const handleSubmit = (e) => {
     e.preventDefault();

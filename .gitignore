@@ -7,21 +7,40 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Environment files
 .env
-node_modules
-dist
-dist-ssr
+.Backend/.env
+
+# Dependencies
+node_modules/
+.Backend/node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+
+# Local environment files
 *.local
+
+# Example or temp files
 app.txt
 example.txt
+
+# Custom folders
+.qodo/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore specific folders
+folder_structure.tsx
+.pages/
+.public/

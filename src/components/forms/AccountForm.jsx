@@ -61,6 +61,21 @@ const AccountForm = ({ onAccountSubmit }) => {
             required
             disabled={showRaisonSociale}
           />
+          {/*
+          <label className={`block text-sm font-medium mb-2 ${theme === 'dark' ? 'text-[#B9D4AA]' : 'text-gray-700'}`}>
+            Password 
+          </label>
+          <input 
+            type="password" 
+            className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A827E] ${
+              theme === 'dark'
+                ? 'bg-[#2C2C2C] border-gray-600 text-[#EEEEEE]' 
+                : 'bg-white border-gray-300 text-gray-900'
+            }`} 
+            
+            placeholder="Entrez votre mot de passe"
+            required
+          /> */}
         </div>
         
         {showRaisonSociale && (

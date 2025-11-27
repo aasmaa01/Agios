@@ -35,7 +35,7 @@ const App = () => {
   
   const handleQuarterSubmit = (quarter) => {
     setSelectedQuarter(quarter);
-    setStep('dashboard');
+    setStep('dashboard');  
   };
   
   const handleAccountSubmit = (accountData) => {

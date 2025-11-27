@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "react-scripts start",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:css": "tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch"

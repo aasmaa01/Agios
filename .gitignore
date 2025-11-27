@@ -10,7 +10,7 @@ lerna-debug.log*
 # Environment files
 .env
 .Backend/.env
-
+.Backend
 # Dependencies
 node_modules/
 .Backend/node_modules/

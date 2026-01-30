@@ -44,3 +44,4 @@ example.txt
 folder_structure.tsx
 .pages/
 .public/
+.vite/

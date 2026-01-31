@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTheme } from '../../../context/ThemeContext';
-import { useAccount } from '../../../context/AccountContext';
-import { getQuarterDates } from '../../../utils/dates';
+import { useTheme } from '../../context/ThemeContext';
+import { useAccount } from '../../context/AccountContext';
+import { getQuarterDates } from '../../utils/dates';
 import Button from '../ui/Button';
 import { Sun, Moon, CalendarDays, UserCircle } from 'lucide-react';
 

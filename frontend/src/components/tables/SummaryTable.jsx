@@ -1,6 +1,6 @@
 import React from 'react';
-import {useTheme}  from '../../../context/ThemeContext'; // Importing the ThemeContext
-import { formatCurrency, formatDate, parseDate } from '/utils/format.js';
+import {useTheme}  from '../../context/ThemeContext'; // Importing the ThemeContext
+import { formatCurrency, formatDate, parseDate } from '../../utils/format';
 const SummaryTable = ({ movements, frais, tvaRate }) => {
   const { theme } = useTheme();
   

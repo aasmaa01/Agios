@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { useTheme } from '../../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import Button from '../ui/Button';
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTheme } from '../../../context/ThemeContext'; // Assuming you have a ThemeContext set up  
+import { useTheme } from '../../context/ThemeContext'; // Assuming you have a ThemeContext set up  
 import Button from '../ui/Button'; // Importing the Button component
 import { Settings } from 'lucide-react'; // Importing the Settings icon
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTheme } from '../../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import Button from '../ui/Button'; // Assuming you have a Button component
 
 

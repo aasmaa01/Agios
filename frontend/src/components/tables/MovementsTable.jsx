@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Plus, Trash2, Upload, Download } from 'lucide-react';
-import { useTheme } from '../../../context/ThemeContext';
-import { formatCurrency, formatDate } from '../../../utils/format';
-import { getQuarterDates, isDateInQuarter } from '../../../utils/dates';
-import calculateInterest from '../../../utils/calc';
+import { useTheme } from '../../context/ThemeContext';
+import { formatCurrency, formatDate } from '../../utils/format';
+import { getQuarterDates, isDateInQuarter } from '../../utils/dates';
+import calculateInterest from '../../utils/calc';
 import Button from '../ui/Button'; // Importing the Button component
-import { calculateDaysDifference } from '../../../utils/dates';
+import { calculateDaysDifference } from '../../utils/dates';
 import * as XLSX from 'xlsx';
  
 

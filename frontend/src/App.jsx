@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import useStateStorage  from '../hooks/useStateStorage.js'; // Custom hook for state storage
-import {AccountContext} from '../context/AccountContext'; // Assuming you have an AccountContext set up
+import useStateStorage  from './hooks/useStateStorage.js'; // Custom hook for state storage
+import {AccountContext} from './context/AccountContext'; // Assuming you have an AccountContext set up
 import Button from './components/ui/Button'; // Importing the Button component
 import Alert from './components/ui/Alert'; // Importing the Alert component
 import {Header} from './components/layout/Header.jsx'; // Importing the Header component
 import Footer from './components/layout/Footer.jsx'; // Importing the Footer component
 import QuarterForm  from '/src/components/forms/QuarterForm.jsx'; // Importing the QuarterForm component
 import AccountForm from '/src/components/forms/AccountForm.jsx';
-import ThemeContext from '../context/ThemeContext'; 
+import ThemeContext from './context/ThemeContext'; 
 import ConfigurationTable from  './components/tables/ConfigurationTable.jsx'; // Importing the ConfigurationTable component
 import MovementsTable from './components/tables/MovementsTable.jsx'; // Importing the
 import SummaryTable from './components/tables/SummaryTable.jsx'; // Importing the SummaryTable component

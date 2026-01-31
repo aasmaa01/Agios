@@ -7,8 +7,18 @@ import quartersRouter from './routes/quarter.routes.js';
 import movementsRouter from './routes/movement.routes.js';
 import configRouter from './routes/config.js';
 
+import { Prisma } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+const adapter= new PrismaPg({
+    connectionString: process.env.DATABASE_URL,
+});
+
 const app = express();
 const PORT = 5000;
+const prisma = new PrismaClient({
+    adapter,
+});
 
 // Middleware
 app.use(cors());
@@ -21,9 +31,15 @@ app.use('/api/movements', movementsRouter);
 app.use('/api/config', configRouter);
 
 // Default route
-app.get('/', (req, res) => {
-  res.send('Backend API is running');
+app.get('/', async (req, res) => {
+    const userCount= await prisma.user.count();
+    res.json(
+        userCount == 0
+        ? "No user have been added yet! "
+        : "Some users have been added to the database!"
+    );
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

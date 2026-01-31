@@ -3,21 +3,54 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 model User {
   id  Int @id @default(autoincrement())
+  name  String
   email String @unique
-  password  String?
-  createdAt DateTime @default(now())
+  password_hash String 
+  //have many accounts
   accounts Account[]
 }
+
+model Account {
+  id Int @unique @default(autoincrement())
+  company_name String
+  balance Float @default(0)
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  //have many quarters
+  quarters Quarter[]
+  movements Movement
+}
+
+model Quarter {
+  id Int @id @default(autoincrement())
+  label String //example Q1-2025
+  accountId Int
+  account Account @relation(fields: [accountId], references: [id])
+//have many mouvments
+  mouvments Movement[]
+}
+
+model Movement {
+  id Int @id @default(autoincrement())
+  amount Float
+  //type MovementType //debit or credit
+
+  accountId Int
+  quarterId Int
+
+  account Account @relation(fields: [accountId], references: [id])
+  quarter Quarter @relation(fields: [quarterId], references: [id])
+}
+
+

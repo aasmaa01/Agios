@@ -17,6 +17,10 @@ model User {
   name  String
   email String @unique
   password_hash String 
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   //have many accounts
   accounts Account[]
 }
@@ -25,6 +29,10 @@ model Account {
   id Int @unique @default(autoincrement())
   company_name String
   balance Float @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   userId Int
   user User @relation(fields: [userId], references: [id])
   //have many quarters
@@ -37,6 +45,10 @@ model Quarter {
   label String //example Q1-2025
   accountId Int
   account Account @relation(fields: [accountId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
 //have many mouvments
   mouvments Movement[]
 }
@@ -44,7 +56,11 @@ model Quarter {
 model Movement {
   id Int @id @default(autoincrement())
   amount Float
-  //type MovementType //debit or credit
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  type MovementType //debit or credit
 
   accountId Int
   quarterId Int
@@ -53,4 +69,7 @@ model Movement {
   quarter Quarter @relation(fields: [quarterId], references: [id])
 }
 
-
+enum MovementType {
+  CREDIT
+  DEBIT
+}

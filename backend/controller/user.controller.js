@@ -45,11 +45,62 @@ export async function userSignup(req, res) {
                     name: user.name,
                     email:user.email,
                 },
-                token,
             }
         })
     } catch(error){
         console.error(error)
-        res.status(500).json({error: "Erreur serveur"})
+        return res.status(500).json({error: "Erreur serveur"})
     }
+}
+
+
+//login user 
+export async function userLogin(req, res) {
+    try {
+        const {email, password}= req.body
+        //check if email exist
+        const user = await prisma.user.findUnique({where: {email: email}})
+
+        if(!user){
+            return res.status(401).json({error: "cet email n'existe pas!"})
+        }
+
+        //verify password
+        const isPassValid= await bcrypt.compare(password, user.password_hash)
+
+        if(!isPassValid){
+            return res.status(401).json({error:"mot de passe invalide!"})
+        }
+
+        //generate jwt
+        const token= generateToken(user.id, res)
+
+        res.status(200).json({
+            status:"success",
+            data:{
+                id:user.id,
+                email:user.email,
+            }
+        })
+        
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({error: "Erreur serveur!"})
+    }
+
+}
+
+
+export async function userLogout(req, res) {
+    res.cookie("jwt", "",{
+        httpOnly: true,
+        expires:new Date(0),
+    })
+    res.status(200).json({
+        status:"success",
+        message: "Logged Out Successfully"
+
+    })
+    
 }

@@ -1,34 +1,35 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import 'dotenv/config';
 
+import { PrismaClient } from '@prisma/client';
+
+//import routes
+import userRouter from './routes/user.routes.js';
 import accountsRouter from './routes/account.routes.js';
 import quartersRouter from './routes/quarter.routes.js';
 import movementsRouter from './routes/movement.routes.js';
-import configRouter from './routes/config.js';
+// import configRouter from './routes/config.js';
 
-import { Prisma } from '@prisma/client';
-import { PrismaClient } from '@prisma/client';
-import { PrismaPg } from '@prisma/adapter-pg';
-const adapter= new PrismaPg({
-    connectionString: process.env.DATABASE_URL,
-});
+// Import Middleware
+import { notFound, errorHandler } from './middleware/error.middleware.js';
 
 const app = express();
-const PORT = 5000;
-const prisma = new PrismaClient({
-    adapter,
-});
+const PORT = process.env.PORT || 5000;
+const prisma = new PrismaClient();
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.use('/api/user', userRouter);
 app.use('/api/accounts', accountsRouter);
 app.use('/api/quarters', quartersRouter);
 app.use('/api/movements', movementsRouter);
-app.use('/api/config', configRouter);
+// app.use('/api/config', configRouter);
 
 // Default route
 app.get('/', async (req, res) => {
@@ -40,6 +41,9 @@ app.get('/', async (req, res) => {
     );
 });
 
+// Error Handling
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

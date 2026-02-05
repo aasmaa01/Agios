@@ -1,17 +1,24 @@
-import express from 'express';
-const router = express.Router();
+import { PrismaClient } from "../generated/prisma/client";
 
-let config = {
-  taux: 8.5,
-  frais: 1500,
-  tvaRate: 19
-};
+export const prisma = new PrismaClient({
+  log:
+    process.env.NODE_ENV === "development"
+    ? ["query", "error", "warn"]
+    : ["error"]
+})
 
-router.get('/', (req, res) => res.json(config));
+export const connectDB= async()=>{
+  try{
+    await prisma.$connect();
+    console.log("Connected database via Prisma!")
 
-router.post('/', (req, res) => {
-  config = { ...config, ...req.body };
-  res.json(config);
-});
+  } catch(error){
+    console.error(`Database Connection error! ${error.message}`)
 
-export default router;
+  }
+}
+
+export const disconnectDB= async()=>{
+  await prisma.$disconnect();
+}
+
